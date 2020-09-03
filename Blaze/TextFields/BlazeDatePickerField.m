@@ -28,6 +28,9 @@
     
     self.datePicker = [[UIDatePicker alloc] init];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
+    if (@available(iOS 13.4, *)) {
+        self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    }
     self.datePicker.backgroundColor = [UIColor whiteColor];
     [self.datePicker addTarget:self action:@selector(dateValueChanged) forControlEvents:UIControlEventValueChanged];
     self.inputView = self.datePicker;
